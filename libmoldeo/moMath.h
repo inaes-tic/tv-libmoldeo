@@ -377,7 +377,7 @@ public:
 	 * @param uiSeed semilla para el generador aleatorio.
 	 * @return número aleatorio en en [0,1).
 	 */
-    inline static Real UnitRandom (unsigned int uiSeed = 0) {
+    inline static Real UnitRandom (Real uiSeed = 0) {
       if (uiSeed > 0)
       {
           srand(uiSeed);
@@ -393,7 +393,7 @@ public:
 	 * @param uiSeed semilla para el generador aleatorio.
 	 * @return número aleatorio en [-1,1).
 	 */
-    inline static Real SymmetricRandom (unsigned int uiSeed = 0) {
+    inline static Real SymmetricRandom (Real uiSeed = 0) {
       if (uiSeed > 0.0)
       {
           srand(uiSeed);
@@ -412,7 +412,7 @@ public:
 	 * @return resultado.
 	 */
     inline static Real IntervalRandom (Real fMin, Real fMax,
-        unsigned int uiSeed = 0) {
+        Real uiSeed = 0) {
         if (uiSeed > 0)
         {
             srand(uiSeed);
@@ -422,37 +422,7 @@ public:
         return fMin+(fMax-fMin)*((Real)dRatio);
     }
 
-	/**
-     * Genera un número aleatorio en [0,1). El generador puede ser inicializado con una primera llamada
-     * pasando como parámetro una semilla positiva.
-	 * @param rSeed semilla para el generador aleatorio.
-	 * @return número aleatorio en en [0,1).
-	 */
-	inline static Real UnitRandom (Real rSeed) {
-	  return UnitRandom ((unsigned int)rSeed);
-  }
-	/**
-     * Genera un número aleatorio en [-1,1). El generador puede ser inicializado con una primera llamada
-     * pasando como parámetro una semilla positiva.
-	 * @param rSeed semilla para el generador aleatorio.
-	 * @return número aleatorio en [-1,1).
-	 */
-	inline static Real SymmetricRandom (Real rSeed) {
-    return SymmetricRandom  ((unsigned int)rSeed);
-  }
-	/**
-     * Genera un número aleatorio en [fMin,fMax). El generador puede ser inicializado con una primera llamada
-     * pasando como parámetro rSeed una semilla positiva.
-	 * @param fMin extremo izquierdo del intervalo.
-	 * @param fMax extremo derecho del intervalo.
-	 * @param rSeed semilla para el generador aleatorio.
-	 * @return resultado.
-	 */
-	inline static Real IntervalRandom (Real fMin, Real fMax, Real rSeed) {
-	  return IntervalRandom (fMin, fMax, (unsigned int)rSeed);
-	}
-
-	/**
+      /**
      * Función seno acelerada, version 0. Max error sin0 = 1.7e-04, aceleración = 4.0
 	 * @param fValue argumento en [0,pi/2].
 	 * @return resultado.
