@@ -140,10 +140,10 @@ PKG_CHECK_MODULES([CHECK], [check >= 0.9.4])
 
 dnl check boost libraries
 AX_BOOST_BASE
-AX_BOOST_ASIO
 AX_BOOST_THREAD
 AX_BOOST_FILESYSTEM
 AX_BOOST_SYSTEM
+AX_BOOST_ASIO
 
 dnl autoscan results
 AC_CHECK_FUNCS([floor])
